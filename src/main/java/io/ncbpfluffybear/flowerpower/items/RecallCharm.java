@@ -8,12 +8,12 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import io.ncbpfluffybear.flowerpower.FlowerPowerPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Sound;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
 import org.bukkit.inventory.ItemStack;
@@ -96,10 +96,16 @@ public class RecallCharm extends SimpleSlimefunItem<ItemUseHandler> {
 
             // Parse location data
             String[] location = locationDat.split("_");
+            World world = Bukkit.getWorld(UUID.fromString(location[0]));
+
+            if (world == null) {
+                Utils.send(p, "&c绑定的世界不存在或尚未加载！");
+                return;
+            }
 
             // Consume exp and teleport player
             p.giveExp(-TELEPORT_COST);
-            p.teleport(new Location(Bukkit.getWorld(UUID.fromString(location[0])),
+            p.teleport(new Location(world,
                     Integer.parseInt(location[1]) + 0.5, Integer.parseInt(location[2]),
                     Integer.parseInt(location[3]) + 0.5
             ));
