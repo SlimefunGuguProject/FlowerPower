@@ -4,16 +4,7 @@
 
 ## 下载
 
-点击这里下载 FlowerPower: [下载 FlowerPower](https://builds.guizhanss.net/SlimefunGuguProject/FlowerPower/master)
-
-<p align="center">
-  <a href="https://github.com/SlimefunGuguProject/FlowerPower/actions/workflows/maven.yml">
-    <img src="https://github.com/SlimefunGuguProject/FlowerPower/actions/workflows/maven.yml/badge.svg" alt="Java CI"/>
-  </a>
-  <a href="https://builds.guizhanss.net/SlimefunGuguProject/FlowerPower/master">
-    <img src="https://builds.guizhanss.net/f/SlimefunGuguProject/FlowerPower/master/badge.svg" alt="Build status"/>
-  </a>
-</p>
+[下载 FlowerPower](https://resources.guizhanss.com/plugin/FlowerPower)
 
 ## 内容
 
