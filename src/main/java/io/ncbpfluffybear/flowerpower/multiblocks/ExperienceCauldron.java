@@ -8,6 +8,7 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import io.ncbpfluffybear.flowerpower.FlowerPowerItems;
+import net.guizhanss.guizhanlib.minecraft.utils.MinecraftVersionUtil;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
@@ -23,7 +24,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.CauldronLevelChangeEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
-import utils.Constants;
 import utils.ItemStackComparator;
 import utils.Utils;
 
@@ -228,7 +228,7 @@ public class ExperienceCauldron extends SlimefunItem implements Listener {
     }
 
     private static boolean useNewCauldrons() {
-        return Constants.SERVER_VERSION.contains("1.17") || Constants.SERVER_VERSION.contains("1.18") || Constants.SERVER_VERSION.contains("1.19") || Constants.SERVER_VERSION.contains("1.20") || Constants.SERVER_VERSION.contains("1.21");
+        return MinecraftVersionUtil.isAtLeast(1, 17);
     }
 
     /**
